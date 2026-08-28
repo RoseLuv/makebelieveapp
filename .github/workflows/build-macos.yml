@@ -27,7 +27,12 @@ jobs:
 
       - name: Build application
         run: |
-          pyinstaller --windowed --name "MakeBelieveAuto" BE.py
+          pyinstaller --windowed --name "MyApp" BE.py
+
+      - name: Show build files
+        run: |
+          ls -la dist
+          find dist -maxdepth 3 -print
 
       - name: Upload macOS app
         uses: actions/upload-artifact@v4
